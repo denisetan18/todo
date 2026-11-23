@@ -7,6 +7,7 @@
   --border: #e2e5ea;
   --accent: #3b6ef5;
   --red: #d93025;
+  --pink: #e0408a;
   --red-bg: #fdecea;
   --amber: #b26a00;
   --amber-bg: #fff4e0;
@@ -21,6 +22,7 @@
   --muted: #9aa1ad;
   --border: #2d313a;
   --red: #ff6b60;
+  --pink: #ff7eb6;
   --red-bg: #3a1f1d;
   --amber: #ffb84d;
   --amber-bg: #3a2e18;
@@ -36,7 +38,7 @@ body {
 }
 .app { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
 .top { position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 16px; }
-h1 { margin: 0; text-align: center; color: var(--red); }
+h1 { margin: 0; text-align: center; color: var(--pink); }
 .theme-toggle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
 .sr-only {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
