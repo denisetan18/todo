@@ -36,7 +36,7 @@ body {
 }
 .app { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
 .top { position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 16px; }
-h1 { margin: 0; text-align: center; }
+h1 { margin: 0; text-align: center; color: var(--red); }
 .theme-toggle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
 .sr-only {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
