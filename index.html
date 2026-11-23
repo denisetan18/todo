@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>To-Do with Deadlines</title>
+  <script>
+    // Apply the saved (or system) theme before first paint to avoid a flash.
+    try {
+      // ?demo=light|dark is used by mockups/mockup.html to force a theme.
+      var m = location.search.match(/[?&]demo=(light|dark)/);
+      var t = m ? m[1] : localStorage.getItem('todo.theme');
+      if (!t && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>To-Do</h1>
+      <button id="theme-toggle" class="icon-btn theme-toggle" type="button"></button>
+    </header>
+
+    <form id="add-form" class="add-form">
+      <label class="sr-only" for="task-text">Task</label>
+      <input id="task-text" type="text" placeholder="What needs doing?" required maxlength="200" autocomplete="off">
+      <label class="sr-only" for="task-date">Deadline date</label>
+      <input id="task-date" type="date">
+      <label class="sr-only" for="task-category">Category</label>
+      <select id="task-category">
+        <option value="work">Work</option>
+        <option value="personal" selected>Personal</option>
+        <option value="others">Others</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+      <nav class="filters" aria-label="Filter tasks">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="active">Active</button>
+        <button data-filter="completed">Completed</button>
+        <button data-filter="overdue">Overdue</button>
+      </nav>
+      <label class="cat-filter">Category
+        <select id="cat-filter">
+          <option value="all">All</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="others">Others</option>
+        </select>
+      </label>
+    </div>
+    <p class="hint">Drag tasks or use the arrows to reorder</p>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden>Nothing here yet.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
